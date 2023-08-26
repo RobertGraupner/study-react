@@ -20,7 +20,8 @@
       "error",
       {
         "singleQuote": true,
-        "jsxSingleQuote": true
+        "jsxSingleQuote": true,
+        "trailingComma": "none"
       }
     ]
   }
