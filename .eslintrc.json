@@ -17,7 +17,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "singleQuote": true,
         "jsxSingleQuote": true,
