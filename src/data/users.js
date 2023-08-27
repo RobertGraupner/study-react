@@ -39,4 +39,4 @@ export const users = [
     attendance: '63%',
     average: '4.3'
   }
-]
+];
