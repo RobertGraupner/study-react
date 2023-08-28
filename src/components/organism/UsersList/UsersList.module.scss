@@ -1,5 +1,7 @@
+@import '../../../styles/settings.scss';
+
 .wrapper {
-  background-color: #fff;
+  background-color: $color-light;
   width: 100%;
   max-width: 500px;
   padding: 40px 30px;
