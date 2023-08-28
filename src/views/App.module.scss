@@ -1,5 +1,7 @@
+@import '../styles/settings.scss';
+
 .container {
-  background-color: lightgray;
+  background-color: $color-lightGrey;
   display: flex;
   justify-content: center;
   align-items: center;
