@@ -5,7 +5,10 @@ import styles from './UsersListItem.module.scss';
 import Button from '../../atoms/Button/Button';
 
 // destructuring props right away
-const UsersListItem = ({ user: { average, name, attendance } }) => {
+const UsersListItem = ({
+  deleteUser,
+  user: { id, average, name, attendance }
+}) => {
   // function that returns the background colour for a given average
   const getColor = (average) => {
     if (average > 4.0) return styles.success;
@@ -23,7 +26,7 @@ const UsersListItem = ({ user: { average, name, attendance } }) => {
         <p>{name}</p>
         <p>attendace: {attendance}</p>
       </div>
-      <Button />
+      <Button onClick={() => deleteUser(id)} />
     </li>
   );
 };
@@ -32,8 +35,10 @@ UsersListItem.propTypes = {
   user: PropTypes.shape({
     average: PropTypes.string,
     name: PropTypes.string,
-    attendance: PropTypes.string
-  })
+    attendance: PropTypes.string,
+    id: PropTypes.string
+  }),
+  deleteUser: PropTypes.func
 };
 
 export default UsersListItem;
