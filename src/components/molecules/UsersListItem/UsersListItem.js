@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './UsersListItem.module.scss';
-import Button from '../../atoms/Button/Button';
+import RemoveButton from '../../atoms/RemoveButton/RemoveButton';
 
 // destructuring props right away
 const UsersListItem = ({
@@ -26,7 +26,7 @@ const UsersListItem = ({
         <p>{name}</p>
         <p>attendace: {attendance}</p>
       </div>
-      <Button onClick={() => deleteUser(id)} />
+      <RemoveButton onClick={() => deleteUser(id)} />
     </li>
   );
 };

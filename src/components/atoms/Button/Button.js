@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Button.module.scss';
-import { ReactComponent as RemoveIcon } from '../../../assets/icons/remove-icon.svg';
+import PropTypes from 'prop-types';
 
-const Button = (props) => {
-  return (
-    <button className={styles.button} {...props}>
-      <RemoveIcon />
-    </button>
-  );
+const Button = ({ children }) => {
+  return <button className={styles.button}>{children}</button>;
+};
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired
 };
 
 export default Button;
