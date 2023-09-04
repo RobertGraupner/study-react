@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  border: none;
+  background-color: $color-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
