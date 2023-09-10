@@ -3,11 +3,11 @@ import FormField from '../../molecules/FormField/FormField';
 import Button from '../../atoms/Button/Button';
 import Title from '../../atoms/Title/Title';
 import PropTypes from 'prop-types';
-import styles from './Form.module.scss';
+import ViewWrapper from '../../molecules/ViewWrapper/ViewWrapper';
 
 const Form = ({ handleAddUser, handleInputChange, formValues }) => {
   return (
-    <form className={styles.wrapper} onSubmit={handleAddUser}>
+    <ViewWrapper as='form' onSubmit={handleAddUser}>
       <Title>Add new student</Title>
       <FormField
         label='Name'
@@ -31,7 +31,7 @@ const Form = ({ handleAddUser, handleInputChange, formValues }) => {
         onChange={handleInputChange}
       />
       <Button>Add</Button>
-    </form>
+    </ViewWrapper>
   );
 };
 
