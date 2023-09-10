@@ -34,3 +34,17 @@
   text-align: right;
   margin: 15px 20px 15px auto;
 }
+
+.linkActive {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    background-color: $color-darkPurple;
+  }
+}

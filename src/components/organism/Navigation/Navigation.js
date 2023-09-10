@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import clsx from 'clsx';
 
 const Navigation = () => {
   return (
@@ -8,12 +9,22 @@ const Navigation = () => {
       <div className={styles.logo}>
         <h1>Study react</h1>
       </div>
-      <Link to='/' className={styles.link}>
+      <NavLink
+        to='/'
+        className={({ isActive }) =>
+          clsx(isActive && styles.linkActive, styles.link)
+        }
+      >
         User list
-      </Link>
-      <Link to='/add-user' className={styles.link}>
+      </NavLink>
+      <NavLink
+        to='/add-user'
+        className={({ isActive }) =>
+          clsx(isActive && styles.linkActive, styles.link)
+        }
+      >
         Add user
-      </Link>
+      </NavLink>
     </div>
   );
 };
