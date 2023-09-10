@@ -30,18 +30,19 @@ export const users = [
     average: '2.1'
   },
   {
+    id: '6',
     name: 'Natalia Jaworek',
     attendance: '52%',
     average: '3.8'
   },
   {
-    id: '6',
+    id: '7',
     name: 'Andrzej Szklarski',
     attendance: '38%',
     average: '3.3'
   },
   {
-    id: '7',
+    id: '8',
     name: 'Henryk Jajeczny',
     attendance: '63%',
     average: '4.3'
