@@ -26,7 +26,7 @@ const UsersListItem = ({
         <p>{name}</p>
         <p>attendace: {attendance}</p>
       </div>
-      <RemoveButton onClick={() => deleteUser(id)} />
+      <RemoveButton id={id} onClick={() => deleteUser(id)} />
     </li>
   );
 };

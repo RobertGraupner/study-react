@@ -1,0 +1,36 @@
+@import '../../../styles/settings.scss';
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid $color-darkPurple;
+  padding: 30px 0;
+}
+
+.logo {
+  background-color: $color-darkGrey;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: 15px;
+    color: $color-light;
+    text-align: right;
+    margin-right: 20px;
+  }
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: none;
+  color: $color-darkGrey;
+  text-align: right;
+  margin: 15px 20px 15px auto;
+}
