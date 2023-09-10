@@ -2,11 +2,12 @@ import React from 'react';
 import styles from './UsersList.module.scss';
 import shortid from 'shortid';
 import UsersListItem from '../../molecules/UsersListItem/UsersListItem';
+import ViewWrapper from '../../molecules/ViewWrapper/ViewWrapper';
 import PropTypes from 'prop-types';
 
 const UsersList = ({ deleteUser, user }) => {
   return (
-    <div className={styles.wrapper}>
+    <ViewWrapper>
       <ul className={styles.list}>
         {user.map((user) => (
           <UsersListItem
@@ -16,7 +17,7 @@ const UsersList = ({ deleteUser, user }) => {
           />
         ))}
       </ul>
-    </div>
+    </ViewWrapper>
   );
 };
 

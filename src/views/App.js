@@ -3,10 +3,10 @@ import { users } from '../data/users';
 import { Routes, Route } from 'react-router-dom';
 import UsersList from '../components/organism/UsersList/UsersList';
 import Form from '../components/organism/Form/Form';
-import Navigation from '../components/organism/Navigation/Navigation';
 import { useState } from 'react';
 import shortid from 'shortid';
 import styles from './App.module.scss';
+import MainTemplate from '../components/templates/MainTemplate';
 
 const App = () => {
   const [user, setUser] = useState(users);
@@ -45,8 +45,7 @@ const App = () => {
   };
 
   return (
-    <main>
-      <Navigation />
+    <MainTemplate>
       <div className={styles.container}>
         <Routes>
           <Route
@@ -65,7 +64,7 @@ const App = () => {
           />
         </Routes>
       </div>
-    </main>
+    </MainTemplate>
   );
 };
 
