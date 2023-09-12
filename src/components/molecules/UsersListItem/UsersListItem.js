@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './UsersListItem.module.scss';
 import RemoveButton from '../../atoms/RemoveButton/RemoveButton';
+import { UserContext } from '../../../views/App';
 
 // destructuring props right away
-const UsersListItem = ({
-  deleteUser,
-  user: { id, average, name, attendance }
-}) => {
+const UsersListItem = ({ user: { id, average, name, attendance } }) => {
   // function that returns the background colour for a given average
   const getColor = (average) => {
     if (average > 4.0) return styles.success;
@@ -16,6 +14,8 @@ const UsersListItem = ({
     if (average > 2.0) return styles.error;
     return styles.grey;
   };
+
+  const { deleteUser } = useContext(UserContext);
 
   return (
     <li className={styles.user}>

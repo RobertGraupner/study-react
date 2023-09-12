@@ -3,33 +3,27 @@ import { users } from '../data/users';
 import { Routes, Route } from 'react-router-dom';
 import UsersList from '../components/organism/UsersList/UsersList';
 import Form from '../components/organism/Form/Form';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import shortid from 'shortid';
 import styles from './App.module.scss';
 import MainTemplate from '../components/templates/MainTemplate';
 
+// default UserContext value to protect if the function fails to execute
+export const UserContext = createContext({
+  user: [],
+  deleteUser: () => {},
+  handleAddUser: () => {}
+});
+
 const App = () => {
   const [user, setUser] = useState(users);
-  const [formValues, setFormValues] = useState({
-    name: '',
-    attendance: '',
-    average: ''
-  });
 
   const deleteUser = (id) => {
     const filteredUsers = user.filter((user) => user.id !== id);
     setUser(filteredUsers);
   };
-
-  const handleInputChange = (e) => {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleAddUser = (e) => {
-    e.preventDefault();
+  // formValues passed from Form.js
+  const handleAddUser = (formValues) => {
     const newUser = {
       id: shortid.generate(),
       name: formValues.name,
@@ -37,33 +31,19 @@ const App = () => {
       average: formValues.average
     };
     setUser([...user, newUser]);
-    setFormValues({
-      name: '',
-      attendance: '',
-      average: ''
-    });
   };
 
   return (
     <MainTemplate>
-      <div className={styles.container}>
-        <Routes>
-          <Route
-            path='/'
-            element={<UsersList user={user} deleteUser={deleteUser} />}
-          />
-          <Route
-            path='/add-user'
-            element={
-              <Form
-                formValues={formValues}
-                handleInputChange={handleInputChange}
-                handleAddUser={handleAddUser}
-              />
-            }
-          />
-        </Routes>
-      </div>
+      {/* Provider always takes only one prop */}
+      <UserContext.Provider value={{ user, handleAddUser, deleteUser }}>
+        <div className={styles.container}>
+          <Routes>
+            <Route path='/' element={<UsersList />} />
+            <Route path='/add-user' element={<Form />} />
+          </Routes>
+        </div>
+      </UserContext.Provider>
     </MainTemplate>
   );
 };
