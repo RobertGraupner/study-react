@@ -1,29 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './UsersList.module.scss';
 import shortid from 'shortid';
 import UsersListItem from '../../molecules/UsersListItem/UsersListItem';
 import ViewWrapper from '../../molecules/ViewWrapper/ViewWrapper';
-import PropTypes from 'prop-types';
+import { UserContext } from '../../../views/App';
 
-const UsersList = ({ deleteUser, user }) => {
+const UsersList = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <ViewWrapper>
       <ul className={styles.list}>
         {user.map((user) => (
-          <UsersListItem
-            deleteUser={deleteUser}
-            user={user}
-            key={shortid.generate()}
-          />
+          <UsersListItem user={user} key={shortid.generate()} />
         ))}
       </ul>
     </ViewWrapper>
   );
-};
-
-UsersList.propTypes = {
-  deleteUser: PropTypes.func.isRequired,
-  user: PropTypes.array.isRequired
 };
 
 export default UsersList;
