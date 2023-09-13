@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './UsersListItem.module.scss';
 import RemoveButton from '../../atoms/RemoveButton/RemoveButton';
-import { UserContext } from '../../../views/App';
+import { UserContext } from '../../../providers/UsersProvider';
 
 // destructuring props right away
 const UsersListItem = ({ user: { id, average, name, attendance } }) => {

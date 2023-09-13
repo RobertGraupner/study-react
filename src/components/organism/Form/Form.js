@@ -3,7 +3,7 @@ import FormField from '../../molecules/FormField/FormField';
 import Button from '../../atoms/Button/Button';
 import Title from '../../atoms/Title/Title';
 import ViewWrapper from '../../molecules/ViewWrapper/ViewWrapper';
-import { UserContext } from '../../../views/App';
+import { UserContext } from '../../../providers/UsersProvider';
 
 const Form = () => {
   const [formValues, setFormValues] = useState({

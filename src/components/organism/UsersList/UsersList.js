@@ -3,7 +3,7 @@ import styles from './UsersList.module.scss';
 import shortid from 'shortid';
 import UsersListItem from '../../molecules/UsersListItem/UsersListItem';
 import ViewWrapper from '../../molecules/ViewWrapper/ViewWrapper';
-import { UserContext } from '../../../views/App';
+import { UserContext } from '../../../providers/UsersProvider';
 
 const UsersList = () => {
   const { user } = useContext(UserContext);
