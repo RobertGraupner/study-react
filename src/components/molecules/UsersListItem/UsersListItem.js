@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import styles from './UsersListItem.module.scss';
@@ -8,20 +8,18 @@ import { UserContext } from '../../../providers/UsersProvider';
 // destructuring props right away
 const UsersListItem = ({ user: { id, average, name, attendance } }) => {
   // function that returns the background colour for a given average
-  const getColor = (average) => {
+  const getColor = useMemo(() => {
     if (average > 4.0) return styles.success;
     if (average > 3.0) return styles.warning;
     if (average > 2.0) return styles.error;
     return styles.grey;
-  };
+  }, [average]);
 
   const { deleteUser } = useContext(UserContext);
 
   return (
     <li className={styles.user}>
-      <div className={clsx(styles.userAverage, getColor(average))}>
-        {average}
-      </div>
+      <div className={clsx(styles.userAverage, getColor)}>{average}</div>
       <div className={styles.userInfo}>
         <p>{name}</p>
         <p>attendace: {attendance}</p>
