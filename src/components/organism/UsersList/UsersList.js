@@ -7,11 +7,12 @@ import { UserContext } from '../../../providers/UsersProvider';
 
 const UsersList = () => {
   const { user } = useContext(UserContext);
+  const sortedUsers = user.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <ViewWrapper>
       <ul className={styles.list}>
-        {user.map((user) => (
+        {sortedUsers.map((user) => (
           <UsersListItem user={user} key={shortid.generate()} />
         ))}
       </ul>
