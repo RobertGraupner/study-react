@@ -1,12 +1,9 @@
 import React from 'react';
-import Navigation from '../organism/Navigation/Navigation';
-import SearchBar from '../organism/SearchBar/SearchBar';
+import Navigation from '../../organism/Navigation/Navigation';
+import SearchBar from '../../organism/SearchBar/SearchBar';
 import styles from './MainTemplate.module.scss';
+import NewsSection from '../../templates/NewsSection/NewsSection';
 import PropTypes from 'prop-types';
-
-const News = () => {
-  return <div className={styles.news}></div>;
-};
 
 const MainTemplate = ({ children }) => {
   return (
@@ -14,7 +11,7 @@ const MainTemplate = ({ children }) => {
       <Navigation />
       <SearchBar />
       {children}
-      <News />
+      <NewsSection />
     </div>
   );
 };
