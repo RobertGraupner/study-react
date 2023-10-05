@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import UsersList from '../components/organism/UsersList/UsersList';
 import Form from '../components/organism/Form/Form';
 import styles from './App.module.scss';
-import MainTemplate from '../components/templates/MainTemplate';
+import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
 import UserProvider from '../providers/UsersProvider';
 
 const App = () => {
