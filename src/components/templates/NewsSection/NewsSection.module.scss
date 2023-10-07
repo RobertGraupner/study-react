@@ -8,7 +8,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 50px;
+  padding: 50px 50px 100px 50px;
+  overflow-y: scroll;
 }
 
 .sectionHeader {
@@ -27,7 +28,7 @@
   }
 }
 
-.articleTitle {
+.titleWrapper {
   h3 {
     margin: 0;
     font-size: $font-size-l;
@@ -35,5 +36,16 @@
   p {
     margin: 0;
     font-size: $font-size-m;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  // flex-direction: column;
+
+  img {
+    max-width: 200px;
+    object-fit: cover;
+    margin-left: 30px;
   }
 }
