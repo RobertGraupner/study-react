@@ -10,7 +10,7 @@ const Navigation = () => {
         <h1>Study react</h1>
       </div>
       <NavLink
-        to='/'
+        to='/group'
         className={({ isActive }) =>
           clsx(isActive && styles.linkActive, styles.link)
         }
